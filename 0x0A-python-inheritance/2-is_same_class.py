@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-   the function is_same_class
+          the function is_same_class
 """
 
 
