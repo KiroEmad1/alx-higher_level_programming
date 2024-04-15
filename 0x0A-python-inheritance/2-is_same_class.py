@@ -1,4 +1,4 @@
-!/usr/bin/python3
+#/usr/bin/python3
 """
 the function is_same_class
 """
