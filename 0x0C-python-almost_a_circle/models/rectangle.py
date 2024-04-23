@@ -96,11 +96,31 @@ class Rectangle(Base):
 
     def __str__(self):
         """Returns the string representation of the rectangle."""
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} "
+        return f"[Rectangle] "
+
+    def update(self, *args, **kwargs):
+        """Updates the attributes of the rectangle.
+
+        Args:
+            *args: Non-keyworded arguments (optional).
+            **Keyworded arguments representing attributes .
+
+        Note:
+            If *args exists and is not empty, **kwargs will be skipped.
+            Each key in **kwargs represents an attribute of the rectangle.
+        """
+        if args:
+            attrs = ['id', 'width', 'height', 'x', 'y']
+            for i in range(len(args)):
+                setattr(self, attrs[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     def to_dictionary(self):
         """Returns the dictionary representation of the rectangle."""
-        return {'id': self.id, 'width': self.width, 'hieght': self.height, 'x': self.x, 'y': self.y}
+        return{'n': self.id, 'w': self.width, 'h': self.height, 'x': self.x, 'y': self.y}
+
 
 if __name__ == "__main__":
     r1 = Rectangle(10, 2)
