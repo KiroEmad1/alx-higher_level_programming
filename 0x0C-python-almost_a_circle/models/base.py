@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines the Base class."""
 
+
 class Base:
     """Represents the base class for all other classes."""
 
@@ -10,13 +11,14 @@ class Base:
         """Initializes a Base instance.
 
         Args:
-            id (int): The identifier for the instance. If None, increments __nb_objects and assigns the new value to id.
+            id (int): The identifier for the instance.
         """
         if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
 
 if __name__ == "__main__":
     b1 = Base()
