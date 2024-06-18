@@ -1,2 +1,10 @@
 #!/usr/bin/node
-console.log(typeof process.argv[2] === 'undefined' ? 'No argument' : process.argv[2]); 
+const args = process.argv.slice(2);
+
+if (args.length === 0) {
+  console.log('No argument');
+} else if (args.length === 1) {
+  console.log('Argument found');
+} else {
+  console.log('Arguments found');
+}
